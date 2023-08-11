@@ -27,8 +27,8 @@ pub fn main() void {
 
     // And print the array:
     std.debug.print("more_nums: ", .{});
-    for (more_nums) |n| {
-        std.debug.print("{} ", .{n});
+    for (more_nums, 0..) |n, i| {
+        std.debug.print("{}: {} ", .{ i, n });
     }
 
     std.debug.print("\n", .{});
@@ -37,5 +37,5 @@ pub fn main() void {
 // This function should take a reference to a u8 value and set it
 // to 5.
 fn makeFive(x: *u8) void {
-    ??? = 5; // fix me!
+    x.* = 5; // fix me!
 }
